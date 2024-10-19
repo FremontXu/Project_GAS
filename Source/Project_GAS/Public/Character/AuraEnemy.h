@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Character/AuraCharacterBase.h"
 #include "Interaction/EnemyInterface.h"
+
 #include "AuraEnemy.generated.h"
 
 
@@ -18,10 +19,12 @@ class PROJECT_GAS_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInter
 
 public:
 	AAuraEnemy();
+
 	// 通过 IEnemyInterface 继承
 	void HightLightActor() override;
-
 	void UnHightLightActor() override;
 	
+protected:
+	virtual void BeginPlay() override;
 
 };
